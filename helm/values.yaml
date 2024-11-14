@@ -9,3 +9,10 @@ service:
 
 serviceAccount:
   create: false
+
+mapping:
+  enabled: true
+  host: "metro2.localhost"
+  ambassador_id:
+    - "--apiVersion-v3alpha1-only--default"
+  prefix: "/"
