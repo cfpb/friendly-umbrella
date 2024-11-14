@@ -47,4 +47,8 @@ jobs:
       # Step 4: Install Helm Chart on EKS
       - name: Install Helm Chart on EKS
         run: |
-          helm upgrade --install friendly-umbrella ./helm -n ${{ secrets.NAMESPACE }} -f ./helm/values.yaml --set image.repository=${{ secrets.ECR_REPO }} --set image.tag=$GITHUB_SHA --set mapping.host=${{ secrets.HOST }}
+          helm upgrade --install friendly-umbrella ./helm \
+            -n ${{ secrets.NAMESPACE }} -f ./helm/values.yaml \
+            --set image.repository=${{ secrets.ECR_REPO }} \
+            --set image.tag=$GITHUB_SHA \ 
+            --set mapping.host=${{ secrets.HOST }}
