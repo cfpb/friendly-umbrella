@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xe9&^1#%wg%d-qjy861j5j*_yvf^m@_r-+jcqe0qt9($r4=4!k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.cfpb.gov', 'localhost', '127.0.0.1']
 
 
 # Application definition
