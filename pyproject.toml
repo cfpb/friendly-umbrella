@@ -1,0 +1,17 @@
+[project]
+name = "friendly-umbrella"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.8,<3.9"
+dependencies = [
+    "django>=4.2,<5",
+    "gunicorn>=23.0.0",
+    "psycopg>=3.2.3",
+    "whitenoise>=6.7.0",
+]
+
+[tool.setuptools]
+packages = [
+    "friendly_umbrella",
+]
