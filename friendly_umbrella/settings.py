@@ -139,18 +139,11 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
-# If AWS credentials and a bucket are provided, use S3 for file upload storage
-AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
-if (
-    AWS_ACCESS_KEY_ID is not None
-    and AWS_SECRET_ACCESS_KEY is not None
-    and AWS_STORAGE_BUCKET_NAME is not None
-):
+# Use S3 for file storage if a bucket name is provided.
+if _aws_s3_bucket := os.getenv("AWS_STORAGE_BUCKET_NAME"):
     DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+    AWS_STORAGE_BUCKET_NAME = _aws_s3_bucket
 
-    # Allow setting AWS_S3_ENDPOINT_URL to enable testing against a local S3
-    if os.getenv("AWS_S3_ENDPOINT_URL") is not None:
-        AWS_S3_ENDPOINT_URL = os.getenv("AWS_S3_ENDPOINT_URL")
+    # Allow testing against a mock S3 using Localstack and awslocal.
+    if _s3_endpoint_url := os.getenv("AWS_S3_ENDPOINT_URL"):
+        AWS_S3_ENDPOINT_URL = _s3_endpoint_url
