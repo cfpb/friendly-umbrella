@@ -4,7 +4,7 @@ on:
 jobs:
   build:
     runs-on:
-      - codebuild-cfpb-cfgov-testing-gha-${{ github.run_id }}-${{ github.run_attempt }}
+      - codebuild-cfpb-cfgov-friendly-umbrella-gha-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - name: Checkout Friendly-Umbrella
         uses: actions/checkout@v2
