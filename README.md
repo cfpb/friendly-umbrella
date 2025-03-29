@@ -12,14 +12,6 @@
 
 > Keep the README fresh! It's the first thing people see and will make the initial impression.
 
-## Installation
-
-To install all of the template files, run the following script from the root of your project's directory:
-
-```
-bash -c "$(curl -s https://raw.githubusercontent.com/CFPB/development/main/open-source-template.sh)"
-```
-
 ----
 
 # Project Title
