@@ -1,4 +1,4 @@
-#### CFPB Open Source Project Template Instructions!
+#### CFPB Open Source Project Template Instructions
 
 1. Create a new project.
 2. [Copy these files into the new project](#installation)
